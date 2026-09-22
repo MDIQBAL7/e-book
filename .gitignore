@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Backend environment
+e-book-server/.env
+
+# Frontend environment
+e-book-client/.env

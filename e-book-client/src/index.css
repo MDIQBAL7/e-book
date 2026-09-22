@@ -1,0 +1,386 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+ @plugin "daisyui" {
+  themes: light, dark;
+}
+
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  /* Primary & Secondary */
+  --color-primary: #7C3AED;
+  --color-secondary: #DB2777;
+
+  /* Background Colors */
+  --color-base-100: #FAF9FF;
+  --color-base-200: #F3EEFF;
+  --color-base-300: #e9e1d5;
+
+  /* Text Color */
+  --color-base-content: #38212f;
+}
+
+
+
+/* fonts  style*/
+.font-style {
+  font-family: "Annie Use Your Telescope", cursive;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* fonts regular  */
+.font-regular {
+  font-family: "Annie Use Your Telescope", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@utility btn-basic {
+  @apply inline-flex items-center justify-center gap-2
+    bg-primary text-white
+    px-6 py-3
+    rounded-xl
+    font-semibold
+    shadow-md
+    cursor-pointer
+
+    /* Hover effect */
+    hover:shadow-lg
+    hover:-translate-y-1
+    hover:scale-[1.02]
+
+    /* Click effect */
+    active:translate-y-0
+    active:scale-95
+    active:shadow-sm
+
+    transition-all duration-200
+    ease-out;
+}
+
+/* hero scetion custom css  */
+/* =====================================================
+   HERO ANIMATIONS
+===================================================== */
+
+
+/* ---------- Page Load Reveal ---------- */
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-reveal {
+  opacity: 0;
+  animation: heroReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
+/* ---------- Delay System ---------- */
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-700 {
+  animation-delay: 700ms;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+
+/* ---------- Slow Background Pulse ---------- */
+
+@keyframes pulseSlow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 7s ease-in-out infinite;
+}
+
+
+/* ---------- Glow ---------- */
+
+@keyframes glow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 0.8;
+  }
+}
+
+.animate-glow {
+  animation: glow 6s ease-in-out infinite;
+}
+
+
+/* ---------- Main Reader Floating ---------- */
+
+@keyframes readerFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-reader-float {
+  animation: readerFloat 5s ease-in-out infinite;
+}
+
+
+/* ---------- Floating Cards ---------- */
+
+@keyframes floatingCard {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.floating-card {
+  animation: floatingCard 4.5s ease-in-out infinite;
+}
+
+
+/* ---------- Floating Book ---------- */
+
+@keyframes floatingBook {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-18deg);
+  }
+
+  50% {
+    transform: translateY(-14px) rotate(-12deg);
+  }
+}
+
+.floating-book {
+  animation: floatingBook 4s ease-in-out infinite;
+}
+
+
+/* ---------- Small Decorative Objects ---------- */
+
+@keyframes floatSmall {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float-small {
+  animation: floatSmall 3.5s ease-in-out infinite;
+}
+
+
+/* ---------- Book Bounce ---------- */
+
+@keyframes bookBounce {
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-8deg) translateY(-3px);
+  }
+}
+
+.animate-book-bounce {
+  display: inline-block;
+  animation: bookBounce 2s ease-in-out infinite;
+}
+
+
+/* ---------- Heading Underline ---------- */
+
+@keyframes underline {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-underline {
+  animation: underline 1s 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
+/* ---------- Star Entrance ---------- */
+
+@keyframes starPop {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  70% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-star-pop {
+  opacity: 0;
+  animation: starPop 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
+/* ---------- Avatar Entrance ---------- */
+
+@keyframes avatarReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-avatar {
+  opacity: 0;
+  animation: avatarReveal 0.5s ease-out forwards;
+}
+
+
+/* ---------- Book Stack Entrance ---------- */
+
+.book-item {
+  animation: bookStack 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.book-item:nth-child(1) {
+  animation-delay: 250ms;
+}
+
+.book-item:nth-child(2) {
+  animation-delay: 350ms;
+}
+
+.book-item:nth-child(3) {
+  animation-delay: 450ms;
+}
+
+.book-item:nth-child(4) {
+  animation-delay: 550ms;
+}
+
+.book-item:nth-child(5) {
+  animation-delay: 650ms;
+}
+
+@keyframes bookStack {
+  from {
+    opacity: 0;
+    transform: translateX(30px) rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* =====================================================
+   MOBILE PERFORMANCE
+===================================================== */
+
+@media (max-width: 640px) {
+
+  .floating-card {
+    animation-duration: 6s;
+  }
+
+  .floating-book {
+    animation-duration: 5s;
+  }
+
+  .animate-reader-float {
+    animation-duration: 6s;
+  }
+
+}
