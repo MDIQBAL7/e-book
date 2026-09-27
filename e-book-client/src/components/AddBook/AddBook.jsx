@@ -59,7 +59,7 @@ const AddBook = () => {
       formData.append("cover", cover);
       formData.append("pdf", pdf);
 
-      const res = await fetch("http://localhost:3000/books", {
+      const res = await fetch("https://e-book-server-delta.vercel.app/books", {
         method: "POST",
         body: formData,
       });

@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       {
         path: "bookDetails/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/books/${params.id}`),
+          fetch(`https://e-book-server-delta.vercel.app/books/${params.id}`),
         Component: BookDetails,
       },
       {

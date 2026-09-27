@@ -25,7 +25,7 @@ const MyBooks = () => {
   const filteredBooks = useMemo(() => {
     if (!mybooks) return [];
 
-    return mybooks.filter((item) => {
+    return mybooks?.filter((item) => {
       const book = item.book;
 
       const matchesSearch =

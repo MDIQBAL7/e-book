@@ -106,7 +106,7 @@ const BookDetails = () => {
       currentPage : 0,
       lastReadAt : null
     };
-    fetch("http://localhost:3000/buyer", {
+    fetch("https://e-book-server-delta.vercel.app/buyer", {
       method: "POST",
       headers: {
         "content-type": "application/json",

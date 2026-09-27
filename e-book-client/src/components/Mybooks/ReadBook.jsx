@@ -50,7 +50,7 @@ const ReadBook = () => {
         setAccessDenied(false);
 
         const res = await fetch(
-          `http://localhost:3000/books/${bookId}/access/${encodeURIComponent(
+          `https://e-book-server-delta.vercel.app/books/${bookId}/access/${encodeURIComponent(
             user.email,
           )}`,
         );
@@ -107,7 +107,7 @@ const ReadBook = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/mybooks/${purchaseId}/progress`,
+        `https://e-book-server-delta.vercel.app/mybooks/${purchaseId}/progress`,
         {
           method: "PATCH",
           headers: {

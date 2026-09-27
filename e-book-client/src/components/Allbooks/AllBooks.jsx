@@ -1,7 +1,7 @@
 import React from "react";
 import BookCollection from "../Home/BookCollection ";
 
-const bookres = fetch(`http://localhost:3000/books`).then((res) =>
+const bookres = fetch(`https://e-book-server-delta.vercel.app/books`).then((res) =>
   res.json(),
 );
 const AllBooks = () => {
